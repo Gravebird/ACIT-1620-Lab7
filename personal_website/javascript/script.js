@@ -3,9 +3,10 @@ function createCourseArray() {
   var courseList = new Array();
   var courseElements = document.getElementsByClassName("course_link");
   var courseTerms = document.getElementsByClassName("course_term");
+  var courseSections = document.getElementsByClassName("course");
   var i;
   for (i = 0; i < courseElements.length; i++) {
-    courseList.push({code: courseElements[i].value, date: courseTerms[i].value});
+    courseList.push({code: courseElements[i].text, date: courseTerms[i].value, element: courseSections[i]});
   }
   return courseList;
 }
@@ -29,8 +30,27 @@ function isInt(value) {
  }
 
  function findCourse(courseList) {
-   var user_input = get_input();
+   var user_input = getInput();
+
+   var i;
+   var match = false;
+
+   for (i = 0; i < courseList.length; i++) {
+     if (courseList[i].code.indexOf(user_input) > -1) {
+       match = true;
+       courseList[i].element.style.backgroundColor = "green";
+       break;
+     }
+   }
+   if (!match) {
+
+   }
  }
+
+function main() {
+  var courseList = createCourseArray();
+  findCourse(courseList);
+}
 
 function doesCourseCodeExist(the_code, courseList) {
   var i;
