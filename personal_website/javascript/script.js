@@ -43,9 +43,27 @@ function isInt(value) {
      }
    }
    if (!match) {
-
+     addCourseToPage({code: user_input, date: "Fall 2020"});
    }
  }
+
+function addCourseToPage(course) {
+  var line = document.createElement("hr");
+  var new_link = document.createElement("a");
+  new_link.innerHTML = "<a class = 'course_link' href='#top'>" + course.code + "</a>";
+  var new_desc = document.createElement("p");
+  new_desc.innerHTML = "<p class='course_desc'>N/A</p>";
+  var new_term = document.createElement("p");
+  new_term.innerHTML = "<p class='course_term'>" + course.date + "</p>";
+  var new_div = document.createElement("div");
+  new_div.innerHTML = "<div class='course'></div>";
+  new_div.append(new_link);
+  new_div.append(new_desc);
+  new_div.append(new_term);
+  var the_section = document.getElementsByTagName("section");
+  the_section[0].append(line);
+  the_section[0].append(new_div);
+}
 
 function main() {
   var courseList = createCourseArray();
