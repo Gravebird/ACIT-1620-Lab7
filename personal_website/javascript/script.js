@@ -1,9 +1,12 @@
 
 function createCourseArray() {
   var courseList = new Array();
-  courseList[0] = {code: "ACIT 1620 - Web Fundamental Technologies", date: "Fall 2020"};
-  courseList[1] = {code: "ACIT 1515 - Scripting for IT", date: "Fall 2020"};
-  courseList[2] = {code: "ACIT 1630 - Database Systems", date: "Fall 2020"};
+  var courseElements = document.getElementsByClassName("course_link");
+  var courseTerms = document.getElementsByClassName("course_term");
+  var i;
+  for (i = 0; i < courseElements.length; i++) {
+    courseList.push({code: courseElements[i].value, date: courseTerms[i].value});
+  }
   return courseList;
 }
 
@@ -25,7 +28,11 @@ function isInt(value) {
           value.toString().length == 4;
  }
 
-function doesCourseCodeExist(the_code) {
+ function findCourse(courseList) {
+   var user_input = get_input();
+ }
+
+function doesCourseCodeExist(the_code, courseList) {
   var i;
   var match = false;
   for (i = 0; i < courseList.length; i++) {
@@ -39,9 +46,4 @@ function doesCourseCodeExist(the_code) {
     courseList.push({code: the_code, name: null});
     console.log("New course code added: " + the_code);
   }
-}
-
-function askUserForCourseCode() {
-  var courseCode = getInput();
-  doesCourseCodeExist(courseCode);
 }
