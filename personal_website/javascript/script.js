@@ -1,8 +1,11 @@
 
-var courseList = new Array();
-courseList[0] = {code: "ACIT 1620", name: "Web Fundamental Technologies"};
-courseList[1] = {code: "ACIT 1515", name: "Scripting for IT"};
-courseList[2] = {code: "ACIT 1630", name: "Database Systems"};
+function createCourseArray() {
+  var courseList = new Array();
+  courseList[0] = {code: "ACIT 1620 - Web Fundamental Technologies", date: "Fall 2020"};
+  courseList[1] = {code: "ACIT 1515 - Scripting for IT", date: "Fall 2020"};
+  courseList[2] = {code: "ACIT 1630 - Database Systems", date: "Fall 2020"};
+  return courseList;
+}
 
 function getInput() {
   var code = "invalid";
