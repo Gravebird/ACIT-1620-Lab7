@@ -1,0 +1,84 @@
+
+body {
+  background-color:beige;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+}
+
+header {
+  order: 2;
+}
+
+section {
+  order: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color:lightblue;
+  text-align:center;
+  list-style-position: inside;
+  order: 1;
+}
+
+.navitem {
+  display: inline;
+}
+
+.course {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 25% 75%;
+}
+
+.course_desc {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+.course_term {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.course_link {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+@media screen and (max-width: 600px) {
+  .navitem {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  .course {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .course_desc {
+    order: 2;
+  }
+
+  .course_term {
+    order: 3;
+  }
+
+  .course_link {
+    order: 1;
+  }
+}
