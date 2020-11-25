@@ -51,19 +51,3 @@ function main() {
   var courseList = createCourseArray();
   findCourse(courseList);
 }
-
-function doesCourseCodeExist(the_code, courseList) {
-  var i;
-  var match = false;
-  for (i = 0; i < courseList.length; i++) {
-    if (courseList[i].code.indexOf(the_code) > -1) {
-      console.log("Yes I am taking the course: " + courseList[i].name);
-      match = true;
-      break;
-    }
-  }
-  if (!match) {
-    courseList.push({code: the_code, name: null});
-    console.log("New course code added: " + the_code);
-  }
-}
