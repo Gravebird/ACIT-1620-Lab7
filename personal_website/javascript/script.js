@@ -56,7 +56,7 @@ function addCourseToPage(course) {
   var new_term = document.createElement("p");
   new_term.innerHTML = "<p class='course_term'>" + course.date + "</p>";
   var new_div = document.createElement("div");
-  new_div.innerHTML = "<div class='course'></div>";
+  new_div.classList.add("course");
   new_div.append(new_link);
   new_div.append(new_desc);
   new_div.append(new_term);
